@@ -7,6 +7,7 @@ from enemigo import *
 from nivel import *
 
 
+
 screen = pygame.display.set_mode((ANCHO_VENTANA, ALTO_VENTANA))
 
 pygame.init()
@@ -29,6 +30,7 @@ en_juego = True
 
 reloj = pygame.time.Clock()
 while True:
+    
     
     reloj.tick(60)
 
@@ -55,6 +57,7 @@ while True:
 
         delta_ms = clock.tick(FPS)
         screen.blit(imagen_fondo, imagen_fondo.get_rect())
+
 
         for plataforma in plataformas:
             plataforma.draw(screen)
@@ -104,7 +107,8 @@ while True:
                 pygame.time.wait(3000)  # Esperar 3 segundos antes de salir del juego
                 pygame.quit()
                 sys.exit()
-
+        
+        
         player.update(delta_ms, plataformas)
         player.draw(screen)
 
